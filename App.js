@@ -21,7 +21,7 @@ function StartScreen({ navigation }) {
 
         <Image
           style={styles.logo}
-          source={require('./assets/logo_safe.png')}
+          source={require('./assets/logo_safe.svg')}
         />
 
         <View>

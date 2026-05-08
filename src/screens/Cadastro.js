@@ -12,7 +12,7 @@ export default function Cadastro(){
 
           <Image
             style={styles.logo}
-            source={require('../../assets/logo_safe.png')}
+            source={require('../../assets/logo_safe.svg')}
           />
 
         </View>
@@ -40,6 +40,9 @@ const styles = StyleSheet.create({
   logo:{
     width: 160,
     height: 40,
+    justifyContent: "center",
+    alignItems: "center",
+
   },
 
   containerHeader:{
