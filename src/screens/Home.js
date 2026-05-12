@@ -1,5 +1,4 @@
-
-import React from "react";
+import React, { useState } from "react";
 
 import {
   View,
@@ -9,6 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Switch,
+  TextInput,
 } from "react-native";
 
 import {
@@ -17,7 +17,10 @@ import {
   FontAwesome5,
 } from "@expo/vector-icons";
 
-export default function Home() {
+export default function Home({ navigation }) {
+
+  const [nomeBracelete, setNomeBracelete] = useState("Nome do bracelete");
+  const [editando, setEditando] = useState(false);
 
   return (
 
@@ -36,13 +39,38 @@ export default function Home() {
       {/* Nome + switch */}
       <View style={styles.nomeArea}>
 
-        <Text style={styles.nomeBracelete}>
-          Nome do bracelete
-        </Text>
+        {
+          editando ? (
+
+            <TextInput
+              value={nomeBracelete}
+              onChangeText={setNomeBracelete}
+              onBlur={() => setEditando(false)}
+              autoFocus
+              style={styles.inputNome}
+            />
+
+          ) : (
+
+            <TouchableOpacity
+              onPress={() => setEditando(true)}
+            >
+
+              <Text style={styles.nomeBracelete}>
+                {nomeBracelete}
+              </Text>
+
+            </TouchableOpacity>
+
+          )
+        }
+
+       
       </View>
 
       {/* BPM */}
-      <TouchableOpacity style={styles.card}
+      <TouchableOpacity
+        style={styles.card}
         onPress={() => navigation.navigate("Graf")}
       >
 
@@ -60,7 +88,6 @@ export default function Home() {
 
         </View>
 
-        
         <View style={styles.cardConteudo}>
 
           <FontAwesome5
@@ -156,17 +183,20 @@ export default function Home() {
       {/* Botões */}
       <View style={styles.botoesArea}>
 
-        <TouchableOpacity style={styles.botao}>
+        <TouchableOpacity
+          style={styles.botao}
+          onPress={() => navigation.navigate("Perfil")}
+        >
 
-          <Text style={styles.botaoTexto}
-          onPress={() => navigation.navigate("Perfil")}>
+          <Text style={styles.botaoTexto}>
             Ver perfil
           </Text>
 
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.botao}
-        onPress={() => navigation.navigate("Historico")}
+        <TouchableOpacity
+          style={styles.botao}
+          onPress={() => navigation.navigate("Historico")}
         >
 
           <Text style={styles.botaoTexto}>
@@ -215,6 +245,15 @@ const styles = StyleSheet.create({
     color: '#000',
   },
 
+  inputNome: {
+    fontSize: 20,
+    color: '#000',
+    borderBottomWidth: 1,
+    borderColor: '#999',
+    minWidth: 180,
+    textAlign: 'center',
+  },
+
   card: {
     backgroundColor: '#efefef',
     borderRadius: 8,
@@ -232,6 +271,7 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
+
     shadowRadius: 4,
   },
 
