@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   View,
@@ -12,7 +11,7 @@ import {
 
 import { FontAwesome, Feather, MaterialIcons } from "@expo/vector-icons";
 
-export default function CadastroPerfil() {
+export default function CadastroPerfil({ navigation }) {
 
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -49,7 +48,8 @@ export default function CadastroPerfil() {
             }}
             style={styles.avatar}
           />
-          {/*olha isso dps https://www.youtube.com/watch?v=uX5E_QFJubU*/}
+
+          {/* olha isso dps https://www.youtube.com/watch?v=uX5E_QFJubU */}
         </View>
 
         {/* Nome */}
@@ -110,53 +110,53 @@ export default function CadastroPerfil() {
             color="#000"
           />
 
-        <TextInput
-          placeholder="(99) 99999-9999"
-          value={telefone}
-          onChangeText={(text) => {
+          <TextInput
+            placeholder="(99) 99999-9999"
+            value={telefone}
+            onChangeText={(text) => {
 
-            // remove tudo que não for número
-            let cleaned = text.replace(/\D/g, "");
+              let cleaned = text.replace(/\D/g, "");
 
-            // limita a 11 números
-            cleaned = cleaned.slice(0, 11);
+              cleaned = cleaned.slice(0, 11);
 
-            // formatação
-            if (cleaned.length <= 2) {
-              cleaned = `(${cleaned}`;
-            }
+              if (cleaned.length <= 2) {
+                cleaned = `(${cleaned}`;
+              }
 
-            else if (cleaned.length <= 7) {
-              cleaned = `(${cleaned.slice(0, 2)}) ${cleaned.slice(2)}`;
-            }
+              else if (cleaned.length <= 7) {
+                cleaned = `(${cleaned.slice(0, 2)}) ${cleaned.slice(2)}`;
+              }
 
-            else {
-              cleaned =
-                `(${cleaned.slice(0, 2)}) ` +
-                `${cleaned.slice(2, 7)}-` +
-                `${cleaned.slice(7, 11)}`;
-            }
+              else {
+                cleaned =
+                  `(${cleaned.slice(0, 2)}) ` +
+                  `${cleaned.slice(2, 7)}-` +
+                  `${cleaned.slice(7, 11)}`;
+              }
 
-            setTelefone(cleaned);
-          }}
-          style={styles.input}
-          keyboardType="numeric"
-          maxLength={15}
-        />
+              setTelefone(cleaned);
+            }}
+            style={styles.input}
+            keyboardType="numeric"
+            maxLength={15}
+          />
         </View>
 
         {/* Botões */}
         <View style={styles.buttonContainer}>
 
-          <TouchableOpacity style={styles.button}
-          onPress={() => navigation.navigate("Escolha")}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("Escolha")}
+          >
             <Text style={styles.buttonText}>
               Cancelar
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.button}
-          onPress={() => navigation.navigate("Home")}
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("Home")}
           >
             <Text style={styles.buttonText}>
               Cadastrar
