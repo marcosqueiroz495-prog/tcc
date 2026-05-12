@@ -3,18 +3,24 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Home from './src/screens/Cadastro';
+import Escolha from './src/screens/Escolha';
 import Cadastro from './src/screens/Cadastro';
+import Login from './src/screens/Login';
+import Home from './src/screens/Home';
+import Graf from './src/screens/Graf';
+import Perfil from './src/screens/Perfil';
+import Historico from './src/screens/Historico';
 
 const Stack = createNativeStackNavigator();
 
 function StartScreen({ navigation }) {
+
   return (
-    <View  style={styles.container}>
-      
+    <View style={styles.container}>
+
       <TouchableOpacity
         style={{ flex: 1 }}
-        onPress={() => navigation.navigate("Cadastro")}
+        onPress={() => navigation.navigate("Escolha")}
       >
 
         <StatusBar style="light" />
@@ -25,7 +31,9 @@ function StartScreen({ navigation }) {
         />
 
         <View>
-          <Text style={styles.subtitulo}>Clique em qualquer lugar para iniciar o app!</Text>
+          <Text style={styles.subtitulo}>
+            Clique em qualquer lugar para iniciar o app!
+          </Text>
         </View>
 
       </TouchableOpacity>
@@ -36,12 +44,25 @@ function StartScreen({ navigation }) {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        
+
+    <NavigationContainer
+      linking={{
+        prefixes: [],
+      }}
+    >
+
+      <Stack.Navigator
+        screenOptions={{ headerShown: false }}
+      >
+
         <Stack.Screen
           name="Start"
           component={StartScreen}
+        />
+
+        <Stack.Screen
+          name="Escolha"
+          component={Escolha}
         />
 
         <Stack.Screen
@@ -49,12 +70,39 @@ export default function App() {
           component={Cadastro}
         />
 
+        <Stack.Screen
+          name="Login"
+          component={Login}
+        />
+
+        <Stack.Screen
+          name="Home"
+          component={Home}
+        />
+
+        <Stack.Screen
+          name="Graf"
+          component={Graf}
+        />
+
+        <Stack.Screen
+          name="Perfil"
+          component={Perfil}
+        />
+
+        <Stack.Screen
+          name="Historico"
+          component={Historico}
+        />
+
       </Stack.Navigator>
+
     </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -62,17 +110,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-  subtitulo:{
+  subtitulo: {
     marginTop: 20,
     alignSelf: "center",
-    
   },
 
-  logo:{
+  logo: {
     width: 270,
     height: 260,
     alignSelf: "center",
     marginTop: 150,
     marginLeft: 20
   },
+
 });
