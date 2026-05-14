@@ -6,7 +6,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Escolha from './src/screens/Escolha';
 import Cadastro from './src/screens/Cadastro';
 import Login from './src/screens/Login';
-import Home from './src/screens/Home'
+import Home from './src/screens/Home';
+import Graf from './src/screens/Graf';
+import Perfil from './src/screens/Perfil';
+import Historico from './src/screens/Historico';
+import Alerta from './src/screens/Alerta';
 
 const Stack = createNativeStackNavigator();
 
@@ -75,6 +79,26 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={Home}
+        />
+
+        <Stack.Screen
+          name="Graf"
+          component={Graf}
+        />
+
+        <Stack.Screen
+          name="Perfil"
+          component={Perfil}
+        />
+
+        <Stack.Screen
+          name="Historico"
+          component={Historico}
+        />
+
+        <Stack.Screen
+          name="Alerta"
+          component={Alerta}
         />
 
       </Stack.Navigator>
