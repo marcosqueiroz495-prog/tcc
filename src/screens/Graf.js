@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> d2b3976549c4f3f7fc86df50149c1aedc3b680e2
 import React from "react";
 
 import {
   View,
   Text,
   StyleSheet,
+<<<<<<< HEAD
   TouchableOpacity,
   ScrollView,
   Image,
@@ -201,6 +205,31 @@ export default function Graf({ navigation }) {
       </View>
 
     </ScrollView>
+=======
+  Image,
+} from "react-native";
+
+export default function Home() {
+
+  return (
+
+    <View style={styles.container}>
+
+      <Image
+        source={require("../../assets/minilogo_safe.svg")}
+        style={styles.logo}
+      />
+
+      <Text style={styles.titulo}>
+        Bem-vindo ao SAFE
+      </Text>
+
+      <Text style={styles.subtitulo}>
+        Sua área principal do aplicativo
+      </Text>
+
+    </View>
+>>>>>>> d2b3976549c4f3f7fc86df50149c1aedc3b680e2
 
   );
 }
@@ -209,6 +238,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
+<<<<<<< HEAD
     backgroundColor: "#f3f3f3",
   },
 
@@ -467,3 +497,34 @@ const styles = StyleSheet.create({
   },
 
 });
+=======
+    backgroundColor: "#f2f2f2",
+
+    justifyContent: "center",
+    alignItems: "center",
+
+    padding: 20,
+  },
+
+  logo: {
+    width: 140,
+    height: 140,
+    resizeMode: "contain",
+    marginBottom: 30,
+  },
+
+  titulo: {
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "#274C77",
+    marginBottom: 10,
+  },
+
+  subtitulo: {
+    fontSize: 16,
+    color: "#555",
+    textAlign: "center",
+  },
+
+});
+>>>>>>> d2b3976549c4f3f7fc86df50149c1aedc3b680e2

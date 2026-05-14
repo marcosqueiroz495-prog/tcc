@@ -10,7 +10,10 @@ import Home from './src/screens/Home';
 import Graf from './src/screens/Graf';
 import Perfil from './src/screens/Perfil';
 import Historico from './src/screens/Historico';
+<<<<<<< HEAD
 import Alerta from './src/screens/Alerta';
+=======
+>>>>>>> d2b3976549c4f3f7fc86df50149c1aedc3b680e2
 
 const Stack = createNativeStackNavigator();
 
@@ -96,11 +99,14 @@ export default function App() {
           component={Historico}
         />
 
+<<<<<<< HEAD
         <Stack.Screen
           name="Alerta"
           component={Alerta}
         />
 
+=======
+>>>>>>> d2b3976549c4f3f7fc86df50149c1aedc3b680e2
       </Stack.Navigator>
 
     </NavigationContainer>
