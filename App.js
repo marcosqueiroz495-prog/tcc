@@ -1,5 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity
+} from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -10,16 +17,14 @@ import Home from './src/screens/Home';
 import Graf from './src/screens/Graf';
 import Perfil from './src/screens/Perfil';
 import Historico from './src/screens/Historico';
-<<<<<<< HEAD
 import Alerta from './src/screens/Alerta';
-=======
->>>>>>> d2b3976549c4f3f7fc86df50149c1aedc3b680e2
 
 const Stack = createNativeStackNavigator();
 
 function StartScreen({ navigation }) {
 
   return (
+
     <View style={styles.container}>
 
       <TouchableOpacity
@@ -35,28 +40,31 @@ function StartScreen({ navigation }) {
         />
 
         <View>
+
           <Text style={styles.subtitulo}>
             Clique em qualquer lugar para iniciar o app!
           </Text>
+
         </View>
 
       </TouchableOpacity>
 
     </View>
+
   );
+
 }
 
 export default function App() {
+
   return (
 
-    <NavigationContainer
-      linking={{
-        prefixes: [],
-      }}
-    >
+    <NavigationContainer>
 
       <Stack.Navigator
-        screenOptions={{ headerShown: false }}
+        screenOptions={{
+          headerShown: false,
+        }}
       >
 
         <Stack.Screen
@@ -99,18 +107,17 @@ export default function App() {
           component={Historico}
         />
 
-<<<<<<< HEAD
         <Stack.Screen
           name="Alerta"
           component={Alerta}
         />
 
-=======
->>>>>>> d2b3976549c4f3f7fc86df50149c1aedc3b680e2
       </Stack.Navigator>
 
     </NavigationContainer>
+
   );
+
 }
 
 const styles = StyleSheet.create({
@@ -125,6 +132,9 @@ const styles = StyleSheet.create({
   subtitulo: {
     marginTop: 20,
     alignSelf: "center",
+    color: "#274C77",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 
   logo: {
@@ -132,7 +142,8 @@ const styles = StyleSheet.create({
     height: 260,
     alignSelf: "center",
     marginTop: 150,
-    marginLeft: 20
+    marginLeft: 20,
+    resizeMode: "contain",
   },
 
 });
