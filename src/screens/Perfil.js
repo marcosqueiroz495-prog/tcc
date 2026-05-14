@@ -4,7 +4,6 @@ import {
   View,
   Text,
   StyleSheet,
-<<<<<<< HEAD
   TouchableOpacity,
   Image,
   TextInput,
@@ -66,7 +65,7 @@ export default function Perfil({ navigation }) {
           />
 
           <TextInput
-            placeholder="Nome"
+            value="Marcos"
             editable={false}
             style={styles.input}
           />
@@ -83,7 +82,7 @@ export default function Perfil({ navigation }) {
           />
 
           <TextInput
-            placeholder="Email"
+            value="marcos@email.com"
             editable={false}
             style={styles.input}
           />
@@ -100,7 +99,7 @@ export default function Perfil({ navigation }) {
           />
 
           <TextInput
-            placeholder="Senha"
+            value="********"
             secureTextEntry
             editable={false}
             style={styles.input}
@@ -118,7 +117,7 @@ export default function Perfil({ navigation }) {
           />
 
           <TextInput
-            placeholder="Telefone"
+            value="(13) 99999-9999"
             editable={false}
             style={styles.input}
           />
@@ -128,8 +127,10 @@ export default function Perfil({ navigation }) {
         {/* Botões */}
         <View style={styles.botoesArea}>
 
-          <TouchableOpacity style={styles.botao}
-            onPress={() => navigation.navigate("Cadastro")}>
+          <TouchableOpacity
+            style={styles.botao}
+            onPress={() => navigation.navigate("Cadastro")}
+          >
 
             <Text style={styles.botaoTexto}>
               Editar Perfil
@@ -142,8 +143,7 @@ export default function Perfil({ navigation }) {
             onPress={() => navigation.navigate("Alerta")}
           >
 
-            <Text style={styles.botaoTexto}
-            >
+            <Text style={styles.botaoTexto}>
               Editar Alerta
             </Text>
 
@@ -157,7 +157,7 @@ export default function Perfil({ navigation }) {
         >
 
           <Text style={styles.botaoHomeTexto}>
-            Pág principal
+            Página principal
           </Text>
 
         </TouchableOpacity>
@@ -168,40 +168,12 @@ export default function Perfil({ navigation }) {
 
   );
 
-=======
-  Image,
-} from "react-native";
-
-export default function Home() {
-
-  return (
-
-    <View style={styles.container}>
-
-      <Image
-        source={require("../../assets/minilogo_safe.svg")}
-        style={styles.logo}
-      />
-
-      <Text style={styles.titulo}>
-        Bem-vindo ao SAFE
-      </Text>
-
-      <Text style={styles.subtitulo}>
-        Sua área principal do aplicativo
-      </Text>
-
-    </View>
-
-  );
->>>>>>> d2b3976549c4f3f7fc86df50149c1aedc3b680e2
 }
 
 const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-<<<<<<< HEAD
     backgroundColor: "#f3f3f3",
   },
 
@@ -224,7 +196,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 24,
     fontWeight: "bold",
-    marginLeft: 80,
+    marginLeft: 70,
   },
 
   card: {
@@ -274,12 +246,15 @@ const styles = StyleSheet.create({
 
     height: 50,
     marginBottom: 18,
+
+    borderRadius: 8,
   },
 
   input: {
     flex: 1,
     marginLeft: 10,
     fontSize: 15,
+    color: "#222",
   },
 
   botoesArea: {
@@ -313,48 +288,18 @@ const styles = StyleSheet.create({
 
     height: 50,
 
-    backgroundColor: "#d9d9d9",
+    backgroundColor: "#274C77",
 
     justifyContent: "center",
     alignItems: "center",
 
-    borderWidth: 1,
-    borderColor: "#999",
-
-    borderRadius: 6,
+    borderRadius: 8,
   },
 
   botaoHomeTexto: {
     fontSize: 18,
-    color: "#111",
-=======
-    backgroundColor: "#f2f2f2",
-
-    justifyContent: "center",
-    alignItems: "center",
-
-    padding: 20,
-  },
-
-  logo: {
-    width: 140,
-    height: 140,
-    resizeMode: "contain",
-    marginBottom: 30,
-  },
-
-  titulo: {
-    fontSize: 32,
+    color: "#fff",
     fontWeight: "bold",
-    color: "#274C77",
-    marginBottom: 10,
-  },
-
-  subtitulo: {
-    fontSize: 16,
-    color: "#555",
-    textAlign: "center",
->>>>>>> d2b3976549c4f3f7fc86df50149c1aedc3b680e2
   },
 
 });
